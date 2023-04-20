@@ -21,23 +21,12 @@ function submitOn(event) {
   localStorage.clear();
 
   if (email.value === '' || message.value === '') {
-    return console.log('Please fill in all the fields!');
+    return alert('Please fill in all the fields!');
   }
 
   console.log(formValues);
   event.currentTarget.reset();
 }
-
-const validateForm = () => {
-  const email = form.email.value.trim();
-  const message = form.message.value.trim();
-
-  if (!email || !message) {
-    alert('Please fill out all fields');
-    return false;
-  }
-  return true;
-};
 
 form.addEventListener('input', saveInLocalStorage);
 form.addEventListener('submit', submitOn);
