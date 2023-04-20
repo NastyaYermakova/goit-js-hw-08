@@ -28,5 +28,16 @@ function submitOn(event) {
   event.currentTarget.reset();
 }
 
+const validateForm = () => {
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  if (!email || !message) {
+    alert('Please fill out all fields');
+    return false;
+  }
+  return true;
+};
+
 form.addEventListener('input', saveInLocalStorage);
 form.addEventListener('submit', submitOn);
